@@ -50,6 +50,60 @@ div.Colours2{
 div.MovingGoogles{
     animation: GooglesAnimation 3s infinite;
 }
+div.Text1{
+    animation: MoreInfoAnimation 3s infinite;
+}
+div.Text2{
+    animation: FadeIn 5s infinite;
+}
+.circle3{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 10px solid #b030b0;
+    border-top: 10px solid #602080;
+    top: -1910px;
+    right: -725px;
+    animation: circlesanimation 3s infinite
+}
+.circle4{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 10px solid #5bc8af;
+    border-top: 10px solid #6c91bf;
+    top: -1995px;
+    right: -760px;
+    animation: circlesanimation 2s infinite
+}
+.circle5{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 10px solid #b030b0;
+    border-top: 10px solid #602080;
+    top: -2075px;
+    right: -1025px;
+    animation: circlesanimation 3s infinite
+}
+.circle6{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 10px solid #5bc8af;
+    border-top: 10px solid #6c91bf;
+    top: -2160px;
+    right: -1060px;
+    animation: circlesanimation 2s infinite
+}
 @keyframes FadeGoogles{
     from{
         opacity: 0;
@@ -123,5 +177,15 @@ div.MovingGoogles{
     }
     50%{
         transform: translateY(-50px);
+    }
+}
+@keyframes MoreInfoAnimation {
+    100%,0%{
+        transform: translateY(-10px);
+        color: #A9A9A9;
+    }
+    50%{
+        transform: translateY(10px);
+        color: #505050;
     }
 }
