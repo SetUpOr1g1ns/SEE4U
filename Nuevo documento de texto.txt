@@ -1,0 +1,79 @@
+/***   Included libraries  ***/
+#include <BitbloqSoftwareSerial.h>
+#include <BitbloqRGB.h>
+
+/***   Global variables and function definition  ***/
+bqSoftwareSerial bluetooth(8, 7, 9600);
+ZumRGB led_RGB1(11, 12, 13);
+ZumRGB led_RGB2(0, 1, 2);
+bqSoftwareSerial usb_serie(0, 1, 9600);
+uint8_t musica = 6;
+uint8_t Aparato de Vibración = 5;
+uint8_t sensor_de_color = 4;
+float Duración_cancion1 = 300;
+float Duración_cancion2 = 300;
+float Duración_cancion3 = 300;
+
+/***   Setup  ***/
+void setup() {
+    bluetooth.begin(9600);
+    usb_serie.begin(9600);
+    pinMode(musica, OUTPUT);
+    pinMode(Aparato de Vibración, OUTPUT);
+    pinMode(sensor_de_color, INPUT);
+}
+
+/***   Loop  ***/
+void loop() {
+    usb_serie.println(digitalRead(sensor_de_color));
+    if (bluetooth.readInt() == 1) {
+        noTone(musica);
+        noTone(Aparato de Vibración);
+        led_RGB1.setRGBcolor(235, 97, 35);
+        led_RGB2.setRGBcolor(235, 97, 35);
+        usb_serie.println(digitalRead(sensor_de_color));
+    }
+    if (bluetooth.readInt() == 2) {
+        noTone(musica);
+        noTone(Aparato de Vibración);
+        led_RGB1.setRGBcolor(255, 0, 0);
+        led_RGB2.setRGBcolor(255, 0, 0);
+        usb_serie.println(digitalRead(sensor_de_color));
+    }
+    if (bluetooth.readInt() == 3) {
+        noTone(musica);
+        noTone(Aparato de Vibración);
+        led_RGB1.setRGBcolor(128, 0, 128);
+        led_RGB2.setRGBcolor(128, 0, 128);
+        usb_serie.println(digitalRead(sensor_de_color));
+    }
+    if (bluetooth.readInt() == 4) {
+        noTone(musica);
+        noTone(Aparato de Vibración);
+        led_RGB1.setRGBcolor(0, 0, 255);
+        led_RGB2.setRGBcolor(0, 0, 255);
+        usb_serie.println(digitalRead(sensor_de_color));
+    }
+    if (bluetooth.readInt() == 5) {
+        Cancion1();
+        tone(Aparato de Vibración, 0, Duración_cancion1);
+        delay(Duración_cancion1);
+    }
+    if (bluetooth.readInt() == 6) {
+        Cancion2();
+        tone(Aparato de Vibración, 0, Duración_cancion2);
+        delay(Duración_cancion2);
+    }
+    if (bluetooth.readInt() == 7) {
+        Cancion3();
+        tone(Aparato de Vibración, 0, Duración_cancion3);
+        delay(Duración_cancion3);
+    }
+    if (bluetooth.readInt() == !random(1, 7 + 1)) {
+        led_RGB1.setRGBcolor(0, 0, 0);
+        led_RGB2.setRGBcolor(0, 0, 0);
+        noTone(musica);
+        noTone(Aparato de Vibración);
+        usb_serie.println(digitalRead(sensor_de_color));
+    }
+}
