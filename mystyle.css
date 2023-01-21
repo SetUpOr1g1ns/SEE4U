@@ -1,0 +1,259 @@
+.body{
+    position: relative;
+}
+.circle{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 10px solid #fe444425;
+    border-top: 10px solid red;
+    top: -210px;
+    right: -200px;
+    animation: circlesanimation 3s infinite, FadeIn 5s;
+}
+.circle2{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    border: 10px solid #fee84422;
+    border-top: 10px solid #f9ce24;
+    top: -395px;
+    right: -235px;
+    animation: circlesanimation 2s infinite, FadeIn 5s;
+}
+.Name{
+    animation: FadeIn 5s;
+}
+div.GooglesAnimation{
+    position: relative;
+    top: 300px;
+    right: -300px;
+    animation: FadeGoogles 5s;
+    filter:brightness(0%);
+    top: -450px;
+}
+div.Video{
+    position: relative;
+    top: -350px;
+    right: -250px;
+}
+div.ChangingColours{
+    animation: Colours 5s infinite;
+}
+div.Colours2{
+    animation: OtherColours 7s infinite;
+}
+div.MovingGoogles{
+    animation: GooglesAnimation 3s infinite;
+}
+div.Text1{
+    animation: MoreInfoAnimation 3s infinite;
+}
+div.Text2{
+    animation: FadeIn 5s infinite;
+}
+.circle3{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 10px solid #b030b0;
+    border-top: 10px solid #602080;
+    top: -1910px;
+    right: -725px;
+    animation: circlesanimation 3s infinite
+}
+.circle4{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 10px solid #5bc8af;
+    border-top: 10px solid #6c91bf;
+    top: -1995px;
+    right: -760px;
+    animation: circlesanimation 2s infinite
+}
+.circle5{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 10px solid #b030b0;
+    border-top: 10px solid #602080;
+    top: -2075px;
+    right: -1025px;
+    animation: circlesanimation 3s infinite
+}
+.circle6{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 10px solid #5bc8af;
+    border-top: 10px solid #6c91bf;
+    top: -2160px;
+    right: -1060px;
+    animation: circlesanimation 2s infinite
+}
+div.x{
+    position: relative;
+    top: -1550px;
+    right: -250px;
+    animation: anim 3s;
+    animation-delay: 5s;
+}
+div.y{
+    position: relative;
+    top: -1550px;
+    right: -250px;
+    animation: anim2 3s;
+    animation-delay: 5s;
+}
+div.PresentationAnim{
+    position: relative;
+    top: -2150px;
+    right: -25px;
+    animation: PresentationAnimation 7s;
+}
+div.GooglesRed{
+    position: relative;
+    top: -2650px;
+    right: -400px;
+    animation: RedGoogles 5s infinite;
+    animation-delay: 5s;
+}
+div.GooglesBlue{
+    position: relative;
+    top: -3046px;
+    right: -400px;
+    animation: BlueGoogles 5s infinite;
+    animation-delay: 5s;
+}
+@keyframes RedGoogles{
+    100%, 0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(-500px);
+    }
+}
+@keyframes BlueGoogles{
+    100%, 0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(500px);
+    }
+}
+@keyframes anim{
+    to{
+        transform: translateY(-250px) translateX(-250px);
+    }
+}
+@keyframes anim2{
+    to{
+        transform: translateY(100px) translateX(675px);
+    }
+}
+@keyframes FadeGoogles{
+    from{
+        opacity: 0;
+        filter: brightness(1);
+    }
+    to {
+        opacity: 1;
+        filter:brightness(0%);
+    }
+}
+@keyframes circlesanimation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes FadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes Colours{
+	100%,0%{
+		color: #93FF54;
+	}
+	17%{
+		color: #7be83c;
+	}
+	33%{
+		color: #69e52f;
+	}
+	50%{
+		color: #49df17;
+	}
+    66%{
+        color: #36CF11;
+    }
+    83%{
+        color: #2EC20A;
+    }
+}
+@keyframes OtherColours{
+	100%,0%{
+		color: #D3D3D3;
+	}
+	17%{
+		color: #A9A9A9;
+	}
+	33%{
+		color: #808080;
+	}
+	50%{
+		color: #505050;
+	}
+    66%{
+        color: #303030;
+    }
+    83%{
+        color: #101010;
+    }
+}
+@keyframes GooglesAnimation {
+    100%,0%{
+        transform: translateY(50px);
+    }
+    50%{
+        transform: translateY(-50px);
+    }
+}
+@keyframes MoreInfoAnimation {
+    100%,0%{
+        transform: translateY(-10px);
+        color: #A9A9A9;
+    }
+    50%{
+        transform: translateY(10px);
+        color: #505050;
+    }
+}
+@keyframes PresentationAnimation{
+    100%, 0%{
+        visibility: hidden;
+    }
+    50%{
+        visibility: show;
+    }
+}
